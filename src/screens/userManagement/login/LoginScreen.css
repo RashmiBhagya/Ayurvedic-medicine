@@ -1,0 +1,23 @@
+.loginContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+}
+.adminLoginBg {
+	background: url("https://res.cloudinary.com/dmvkcg5j7/image/upload/v1676390915/istockphoto-1245095474-612x612_a7bmbf.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.sellerLoginBg {
+	background: url("https://res.cloudinary.com/dmvkcg5j7/image/upload/v1676466476/2828893_fhxem1.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.customerLoginBg {
+	background: url("https://res.cloudinary.com/dmvkcg5j7/image/upload/v1676391552/herbs-powder-for-traditional-spa-on-wooden-background-free-photo_uraw6f.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
