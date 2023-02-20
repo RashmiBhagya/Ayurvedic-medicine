@@ -1,8 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const Admin = require("../models/adminModel");
 const {} = require("../routes/adminRoutes");
-//const {} = require("../routes/trainerRoutes");
 const {} = require("../routes/customerRoutes");
+const {} = require("../routes/sellerRoutes");
 const generateToken = require("../utils/generateToken");
 const bcrypt = require("bcryptjs");
 
