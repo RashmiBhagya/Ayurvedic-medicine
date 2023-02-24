@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 const adminRoutes = require("./routes/adminRoutes");
 const sellerRoutes = require("./routes/sellerRoutes");
 const customerRoutes = require("./routes/customerRoutes");
+const userRoutes = require("./routes/userRoutes")
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 dotenv.config();
@@ -21,6 +22,8 @@ app.get("/", (req, res) => {
 app.use("/user/admin", adminRoutes);
 app.use("/user/seller", sellerRoutes);
 app.use("/user/customer", customerRoutes);
+app.use("/user",userRoutes)
+
 
 app.use(notFound);
 app.use(errorHandler);

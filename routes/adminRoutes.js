@@ -1,12 +1,19 @@
 const express = require("express");
-const { registerAdmin, authAdmin, getAdminProfile, updateAdminProfile } = require("../controllers/adminController");
-const { protect } = require("../middleware/authAdminMiddleware");
+// const {
+// 	registerUser,
+// // 	//authSeller,
+// // 	//getSellerProfile,
+// // 	//updateSellerProfile,
+// // 	//deleteSellerProfile,
+//  } = require("../controllers/UserController");
+// // const { protect } = require("../middleware/authUserMiddleware");
 const router = express.Router();
 
-//Routes for Admin Account Operations
-router.route("/register").post(registerAdmin);
-router.route("/login").post(authAdmin);
-router.route("/view").get(protect, getAdminProfile);
-router.route("/edit").put(protect, updateAdminProfile);
+// user management routes
+//router.route("/register").post(registerUser);
+//router.route("/login").post(authSeller);
+//router.route("/view").get(protect, getSellerProfile);
+//router.route("/edit").put(protect, updateSellerProfile);
+//router.route("/delete").delete(protect, deleteSellerProfile);
 
 module.exports = router;

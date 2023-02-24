@@ -1,48 +1,34 @@
 const mongoose = require("mongoose");
 
-const sellerSchema = mongoose.Schema(
+const userSchema = mongoose.Schema(
 	{
-		sellerId: {
+		name: {
 			type: String,
 			required: true,
-		},
-		ownerName: {
-			type: String,
-			required: true,
-		},
-		isAdmin: {
-			type: Boolean,
-			required: true,
-			default: false,
 		},
 		dob: {
 			type: String,
 			required: true,
 		},
-		nic: {
-			type: String,
-			required: true,
-			unique: true,
-		},
-		gender: {
-			type: String,
-			required: true,
+
+		nic:{
+			type:String,
+			required:true,
+			unique:true,
+
 		},
 		telephone: {
 			type: String,
 			required: true,
 		},
-		companyName: {
-			type: String,
-			required: true,
-		},
-		companyAddress: {
+		address: {
 			type: String,
 			required: true,
 		},
 		email: {
 			type: String,
 			required: true,
+			
 		},
 		password: {
 			type: String,
@@ -53,16 +39,18 @@ const sellerSchema = mongoose.Schema(
 			required: true,
 			default: "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
 		},
-		suppliyingMaterials: {
-			type: String,
-			required: true,
-		},
+
+		role:{
+            type:String,
+            required: true,
+            default:"User"
+        }
 	},
 	{
 		timestamps: true,
 	}
 );
 
-const Seller = mongoose.model("Seller", sellerSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = Seller;
+module.exports = User;

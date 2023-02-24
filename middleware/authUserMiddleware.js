@@ -1,12 +1,7 @@
 const jwt = require("jsonwebtoken");
-const Seller = require("../models/sellerModel.js");
+const User = require("../models/userModel.js");
 const asyncHandler = require("express-async-handler");
 
-/**
- * This method is implemented to
- * to authorize the routes for
- * seller
- */
 const protect = asyncHandler(async (req, res, next) => {
 	let token;
 
@@ -15,10 +10,15 @@ const protect = asyncHandler(async (req, res, next) => {
 			token = req.headers.authorization.split(" ")[1];
 
 			const decoded = jwt.verify(token, process.env.JWT_SECRET);
+			const role = decoded.role;
+			req.user = await User.findById(decoded.id).select("-password");
+			if(role === 'Admin'){
+				next();
+			}else{
+				throw new Error("Not Authorized, Token Failed !");
+			}
 
-			req.seller = await Seller.findById(decoded.id).select("-password");
-
-			next();
+			
 		} catch (error) {
 			res.status(401);
 			throw new Error("Not Authorized, Token Failed !");
